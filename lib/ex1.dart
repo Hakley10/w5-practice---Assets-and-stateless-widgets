@@ -22,6 +22,7 @@ class MyHobbies extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 155, 154, 154),
       appBar: AppBar(title: const Text('My Hobbies')),
       body: Padding(
         padding: const EdgeInsets.all(40),
