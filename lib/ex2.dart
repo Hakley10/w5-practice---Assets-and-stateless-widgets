@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 enum ButtonType { primary, secondary, disabled }
-enum IconPosition { left, right } 
+enum IconPosition { left, right }
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Custom buttons')),
+        appBar: AppBar(title: const Text('Custom Buttons')),
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class CustomButton extends StatelessWidget {
   final String label;
   final IconData icon;
@@ -74,35 +75,35 @@ class CustomButton extends StatelessWidget {
     final color = _getColor();
 
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6),
+      margin: const EdgeInsets.only(top: 20),
       width: double.infinity,
       height: 50,
-      child: ElevatedButton(
-        onPressed: type == ButtonType.disabled ? null : () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (iconPosition == IconPosition.left) ...[
-              Icon(icon, color: const Color.fromARGB(255, 112, 112, 112)),
-              const SizedBox(width: 8),
-            ],
-            Text(
-              label,
-              style: const TextStyle(color: Color.fromARGB(255, 112, 112, 112), fontSize: 16),
-            ),
-            if (iconPosition == IconPosition.right) ...[
-              const SizedBox(width: 8),
-              Icon(icon, color: const Color.fromARGB(255, 112, 112, 112)),
-            ],
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+        
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (iconPosition == IconPosition.left) ...[
+            Icon(icon, color: Colors.blueGrey),
+            const SizedBox(width: 8),
           ],
-        ),
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.blueGrey,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          if (iconPosition == IconPosition.right) ...[
+            const SizedBox(width: 8),
+            Icon(icon, color: Colors.blueGrey),
+          ],
+        ],
       ),
     );
   }

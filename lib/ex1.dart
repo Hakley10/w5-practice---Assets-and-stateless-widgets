@@ -71,6 +71,7 @@ class HobbyCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(20),
+        
       ),
       padding: const EdgeInsets.all(30),
       child: Row(
